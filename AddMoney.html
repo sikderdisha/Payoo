@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payoo | HomePage</title>
+    <title>Payoo | AddMoney</title>
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
 
     <!-- Tailwind + daisy UI -->
@@ -48,8 +48,8 @@
           <img src="./assets/logo.png" alt="" class="w-[60px]" />
           <!-- balance  -->
           <div class="balance">
-            <h1 class="font-bold text-2xl">
-              <span>$ 4500</span>
+            <h1 class="font-bold text-2xl">$
+              <span id="balance">4500</span>
             </h1>
             <p class="text-neutral/50">Available Balance</p>
           </div>
@@ -117,7 +117,7 @@
       </section>
 
       <!-- Add money  -->
-      <section class="w-11/12 mx-auto pb-4">
+      <section id="add-money" class=" w-11/12 mx-auto pb-4">
         <div class="payment flex justify-between">
           <div>
             <h1 class="text-xl px-4 font-bold">Add Money</h1>
@@ -134,11 +134,13 @@
                   <label class="label text-[16px] font-bold text-black"
                     >Select A Bank</label
                   >
-                  <select class="select select-neutral text-neutral/50">
+                  <select id="add-money-bank" class="select w-full bg-base-200 rounded-full text-neutral/50">
                     <option disabled selected>Select back</option>
-                    <option>North America</option>
-                    <option>EU west</option>
-                    <option>South East Asia</option>
+                    <option>Dutch-Bangla Bank Limited</option>
+                    <option>Islami Bank Bangladesh Limited</option>
+                    <option>City Bank</option>
+                    <option>AEastern Bank Limited</option>
+                    <option>Eastern Bank Limited</option>
                   </select>
 
                   <!-- Bank Account Number  -->
@@ -147,12 +149,13 @@
                     >Bank Account Number</label
                   >
                   <input
-                    id="input-number"
+                    id="account-number"
                     type="text"
                     class="input bg-base-200 rounded-full"
-                    placeholder="Enter 11 digit account number"
-                    maxlength="11"
-                    minlength="11"
+                    placeholder="Enter the account number"
+                    maxlength="16"
+                    minlength="12"
+                   
                   />
 
                   <!-- Amount to Add -->
@@ -160,10 +163,10 @@
                     >Amount to Add</label
                   >
                   <input
-                    id="pin"
-                    type="password"
+                    id="add-money-amount"
+                    type="number"
                     class="input bg-base-200 rounded-full"
-                    placeholder="Add Amount"
+                    placeholder="Enter Amount"
                   />
 
                   <!-- Pin Number -->
@@ -179,7 +182,7 @@
                     minlength="4"
                   />
                   <button
-                    id="btn-login"
+                    id="btn-addMoney"
                     class="btn btn-primary mt-4 rounded-full text-[16px]"
                   >
                     Add Money
@@ -191,5 +194,9 @@
         </div>
       </section>
     </main>
+
+    <script src="./scripts/buttonsLink.js"></script>
+    <script src="./scripts/AddMoney.js"></script>
+    <script src="./scripts/machine.js"></script>
   </body>
 </html>

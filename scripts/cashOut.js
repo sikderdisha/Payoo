@@ -1,57 +1,38 @@
-document.getElementById("btn-cashOut").addEventListener('click',function(){
-    //1.get the agent number and validation
-    const cashOutNumber = getValueFromInput("agent-number");
+document.getElementById("btn-cashOut").addEventListener("click", function () {
+  //1- get the agent number & validate
+  const cashOutNumber = getValueFromInput("agent-number");
   if (cashOutNumber.length != 11) {
     alert("invalid number");
     return;
   }
-  else{
-      console.log(cashOutNumber);
 
- }
+  //2.get the amount
+  const cashOutAmount = getValueFromInput("amount");
 
-//2.get the amount & validate 
-const amountInfo =  getValueFromInput("amount");
+  //3.get the current balance & covert to number
+  const currentBalance = getBalance();
 
- //3.get the current balance ,validate & covert to number
-     const balanceInfo = getValueFromInput("balance");
- 
-     //4.calculate new balance
-     const newBalance = Number(currentBalance) - Number(amount);
-   
-     //4.1:validation
-     if(newBalance < 0){
-         alert("Invalid Amount");
-         return;
-     }
-     //5.get the PIN and verify
-const pin = getValueFromInput("pin");
-if(pin == '1234'){
+  //4.calculate new balance
+  const newBalance = currentBalance - Number(cashOutAmount);
+
+  //4.1:validation
+  if (newBalance < 0) {
+    alert("Invalid Amount");
+    return;
+  } else {
+    console.log("New balance: ", newBalance);
+  }
+  //5.get the PIN and verify
+  const pin = getValueFromInput("pin");
+  if (pin == "1234") {
     alert("CashOut Successful.");
-     //set new balance to current balance
-         balanceInfo.innerText=newBalance;
-}
-else{
+    //set new balance to current balance
+    document.getElementById("balance").innerText = newBalance;
+  } else {
     alert("Invalid PIN.");
     return;
-}
- 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+});
 
 // document.getElementById("btn-cashOut").addEventListener('click',function(){
 //     //1.get the agent number and validation
@@ -68,26 +49,26 @@ else{
 
 //  }
 
-//     //2.get the amount & validate 
+//     //2.get the amount & validate
 // const amountInfo = document.getElementById("amount");
 // const amount = amountInfo.value;
 // console.log('Agent Number: ',amount);
-  
+
 // //3.get the current balance ,validate & covert to number
 //     const balanceInfo = document.getElementById("balance");
 //     const currentBalance =balanceInfo.innerText; //innerText:lement এর ভিতরের text নিতে হবে।
 //     console.log('Current Balance: ',currentBalance);
-   
+
 //     //4.calculate new balance
 //     const newBalance = Number(currentBalance) - Number(amount);
-   
+
 //     //4.1:validation
 //     if(newBalance < 0){
 //         alert("Invalid Amount");
 //         return;
 //     }
 //     //console.log('New Balance: ',newBalance);
-    
+
 //     //5.get the PIN and verify
 //     const pinInput=document.getElementById("pin");
 //     const pin = pinInput.value;
@@ -96,12 +77,12 @@ else{
 //     if(pin == '1234'){
 //         alert('Cash Out Successful.');
 //         console.log('New Balance: ',newBalance);
-        
+
 //         //set new balance to current balance
 //         balanceInfo.innerText=newBalance;
 
 //     }
-    
+
 //     //5.2.false > error alert > return
 //      else{
 //         alert('Invalid PIN')
