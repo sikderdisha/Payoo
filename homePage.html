@@ -99,7 +99,7 @@
 
 
           <!-- transfer money  -->
-          <button
+          <button  onclick="showOnly('send-money')"
             id="moneyTrans"
             class="btn h-auto p-4 flex flex-col bg-primary-content text-primary"
           >
@@ -108,19 +108,21 @@
           </button>
 
           <!-- bonus  -->
-          <button
+          <button onclick="showOnly('bonus')"
             class="btn h-auto p-4 flex flex-col bg-primary-content text-primary"
           >
             <img src="./assets/opt-4.png" alt="" />
             <h2>Get Bonus</h2>
           </button>
-          <button
+
+          <button onclick="showOnly('pay-bill')"
             class="btn h-auto p-4 flex flex-col text-primary bg-primary-content"
           >
             <img src="./assets/opt-5.png" alt="" />
             <h2>Pay Bill</h2>
           </button>
-          <button
+
+          <button onclick="showOnly('transaction')"
             class="btn h-auto p-4 flex flex-col bg-primary-content text-primary"
           >
             <img src="./assets/opt-5.png" alt="" />
@@ -296,6 +298,70 @@
       </section>
       <!--End of cash out section  -->
 
+      <!-- Transfer money  -->
+       <section id="send-money" class="w-11/12 mx-auto pb-4 hidden ">
+        <div class="payment flex justify-between">
+          <div>
+            <h1 class="text-xl px-4 font-bold">Transfer Money</h1>
+          </div>
+        </div>
+        <div class="options">
+          <div class="form pt-5 rounded-3xl">
+            <div
+              class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto"
+            >
+              <div class="card-body">
+                <fieldset class="fieldset">
+                  <!-- agent number  -->
+                  <label class="label text-[16px] font-bold text-black"
+                    >User Account Number</label
+                  >
+                  <input
+                    id="agent-number"
+                    type="text"
+                    class="input bg-base-200 rounded-full"
+                    placeholder="Enter 11 digit number"
+                    maxlength="16"
+                    minlength="12"
+                  />
+
+                  <!-- amount  -->
+
+                  <label class="label text-[16px] font-bold text-black"
+                    >Amount</label
+                  >
+                  <input
+                    id="amount"
+                    type="text"
+                    class="input bg-base-200 rounded-full"
+                    placeholder="Enter amount to transfer"
+                  />
+
+                  <!-- 4 Digit Pin -->
+                  <label class="label text-[16px] font-bold text-black"
+                    >4 Digit Pin</label
+                  >
+                  <input
+                    id="send-pin"
+                    type="password"
+                    class="input bg-base-200 rounded-full"
+                    placeholder="Enter 4 Digit Pin"
+                    maxlength="4"
+                    minlength="4"
+                  />
+                  <button
+                    id="btn-cashOut"
+                    class="btn btn-primary mt-4 rounded-full text-[16px]"
+                  >
+                    Withdraw Money
+                  </button>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Add money  -->
       <section id="add-money" class="w-11/12 mx-auto pb-4 hidden">
         <div class="payment flex justify-between">
@@ -376,6 +442,141 @@
         </div>
       </section>
       <!-- end of add money section  -->
+
+      <!-- get bonus  -->
+       <section id="bonus" class="w-11/12 mx-auto pb-4 hidden">
+        <div class="payment flex justify-between">
+          <div>
+            <h1 class="text-xl px-4 font-bold">Get Bonus</h1>
+          </div>
+        </div>
+        <div class="options">
+          <div class="form pt-5 rounded-3xl">
+            <div
+              class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto"
+            >
+              <div class="card-body">
+                <fieldset class="fieldset">
+
+                  <label class="label text-[16px] font-bold text-black"
+                    >Enter Bonus Coupon</label
+                  >
+                  <input
+                    id="account-number"
+                    type="text"
+                    class="input bg-base-200 rounded-full"
+                    placeholder="Enter your coupon"
+                
+                  />
+                  
+                  <button
+                    id="bonus-btn"
+                    class="btn btn-primary mt-4 rounded-full text-[16px]"
+                  >
+                    Get Bonus
+                  </button>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- pay bill section  -->
+<section id="pay-bill" class="w-11/12 mx-auto pb-4 hidden">
+        <div class="payment flex justify-between">
+          <div>
+            <h1 class="text-xl px-4 font-bold">Pay Bill</h1>
+          </div>
+        </div>
+        <div class="options">
+          <div class="form pt-5 rounded-3xl">
+            <div
+              class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto"
+            >
+              <div class="card-body">
+                <fieldset class="fieldset">
+                  <!-- select bank  -->
+                  <label class="label text-[16px] font-bold text-black"
+                    >Select To Pay</label
+                  >
+                  <select
+                    id="add-money-bank"
+                    class="select w-full bg-base-200 rounded-full text-neutral/50"
+                  >
+                    <option disabled selected>Select back</option>
+                    <option>Dutch-Bangla Bank Limited</option>
+                    <option>Islami Bank Bangladesh Limited</option>
+                    <option>City Bank</option>
+                    <option>AEastern Bank Limited</option>
+                    <option>Eastern Bank Limited</option>
+                  </select>
+
+                  <!-- Bank Account Number  -->
+
+                  <label class="label text-[16px] font-bold text-black"
+                    >Biller Account Number</label
+                  >
+                  <input
+                    id="account-number"
+                    type="text"
+                    class="input bg-base-200 rounded-full"
+                    placeholder="Enter account number"
+                    maxlength="16"
+                    minlength="12"
+                  />
+
+                  <!-- Amount to Add -->
+                  <label class="label text-[16px] font-bold text-black"
+                    >Amount to Pay</label
+                  >
+                  <input
+                    id="add-money-amount"
+                    type="number"
+                    class="input bg-base-200 rounded-full"
+                    placeholder="Enter Amount"
+                  />
+
+                  <!-- Pin Number -->
+                  <label class="label text-[16px] font-bold text-black"
+                    >Pin Number</label
+                  >
+                  <input
+                    id="pay-pin"
+                    type="password"
+                    class="input bg-base-200 rounded-full"
+                    placeholder="Enter 4 Digit Pin"
+                    maxlength="4"
+                    minlength="4"
+                  />
+                  <button
+                    id="btn-addMoney"
+                    class="btn btn-primary mt-4 rounded-full text-[16px]"
+                  >
+                    Pay Now
+                  </button>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of pay bill  -->
+
+      <!-- Transaction History section  -->
+        <section id="transaction" class="w-11/12 mx-auto pb-4 hidden">
+          <h1 class="text-2xl px-4 font-bold my-5">Transaction History</h1>
+          <div id="transaction-container" class=" bg-base-100 p-5 mx-4">
+            <!-- <div class=" transaction-card p-5 bg-base-100">
+
+          </div> -->
+          </div>
+          
+       
+        
+      </section>
+      <!--End of Transaction section  -->
+
     </main>
 
     <!-- js links  -->

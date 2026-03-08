@@ -26,6 +26,24 @@ document.getElementById("btn-cashOut").addEventListener("click", function () {
   const pin = getValueFromInput("pin");
   if (pin == "1234") {
     alert("CashOut Successful.");
+
+     //transaction history
+    //1.get transaction section
+const history = document.getElementById("transaction-container");
+    //2.create new div
+    const newElement = document.createElement('div');
+
+     //3.add innerText in new div
+    newElement.innerHTML= `
+    <div class="p-3 my-3 bg-base-200 rounded-xl">
+  <p>${cashOutAmount} Taka withdraw successfully</p>
+  <p>Account no: ${cashOutNumber}</p>
+  <p class="text-xs text-gray-500">${new Date()}</p>
+</div>
+    `
+
+     //4.new div append on transaction history
+     history.append(newElement);
     //set new balance to current balance
     document.getElementById("balance").innerText = newBalance;
   } else {

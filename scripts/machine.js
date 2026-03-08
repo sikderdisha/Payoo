@@ -24,10 +24,19 @@ function showOnly(id){
 const addMoney = document.getElementById("add-money");
 const payments = document.getElementById("latest-payment");
 const cashOut =document.getElementById("cash-out");
-
+const Transaction = document.getElementById("transaction");
+const payBill = document.getElementById("pay-bill");
+const sendMoney = document.getElementById('send-money');
+const getBonus = document.getElementById("bonus");
 //make all section hidden
 addMoney.classList.add('hidden');
 cashOut.classList.add('hidden');
+Transaction.classList.add('hidden');
+payBill.classList.add('hidden');
+getBonus.classList.add('hidden');
+sendMoney.classList.add('hidden');
+
+
 
 //remove hidden from clicked btn
 //get id
