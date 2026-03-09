@@ -16,6 +16,12 @@ PAYOO is a smart Mobile Financial Services (MFS) interface that provides a seaml
 - **PIN Security System** - Every transaction requires PIN authentication for enhanced security
 - **User-Friendly Interface** - Responsive design built with DaisyUI for optimal experience across devices
 
+## How to use
+
+**MobileNumber**  01543896583
+**PassWord**  1234
+**AccountNumber** Any number between 11 to 16 digits
+**Coupons** NEWUSER25 or   DISHA100 or  WELCOME50
 
 
 
