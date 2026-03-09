@@ -115,6 +115,7 @@
             <h2>Get Bonus</h2>
           </button>
 
+          <!-- pay bill button  -->
           <button onclick="showOnly('pay-bill')"
             class="btn h-auto p-4 flex flex-col text-primary bg-primary-content"
           >
@@ -122,11 +123,12 @@
             <h2>Pay Bill</h2>
           </button>
 
+          <!-- transaction history button  -->
           <button onclick="showOnly('transaction')"
             class="btn h-auto p-4 flex flex-col bg-primary-content text-primary"
           >
             <img src="./assets/opt-5.png" alt="" />
-            <h2>Transactions</h2>
+            <h2>Transactions History</h2>
           </button>
         </div>
       </section>
@@ -314,15 +316,15 @@
                 <fieldset class="fieldset">
                   <!-- agent number  -->
                   <label class="label text-[16px] font-bold text-black"
-                    >User Account Number</label
+                    >Receiver Account Number</label
                   >
                   <input
-                    id="agent-number"
+                    id="receiver-number"
                     type="text"
                     class="input bg-base-200 rounded-full"
-                    placeholder="Enter 11 digit number"
+                    placeholder="Enter mobile or account number"
                     maxlength="16"
-                    minlength="12"
+                    minlength="11"
                   />
 
                   <!-- amount  -->
@@ -331,7 +333,7 @@
                     >Amount</label
                   >
                   <input
-                    id="amount"
+                    id="send-amount"
                     type="text"
                     class="input bg-base-200 rounded-full"
                     placeholder="Enter amount to transfer"
@@ -350,10 +352,10 @@
                     minlength="4"
                   />
                   <button
-                    id="btn-cashOut"
+                    id="btn-Confirm"
                     class="btn btn-primary mt-4 rounded-full text-[16px]"
                   >
-                    Withdraw Money
+                    Confirm
                   </button>
                 </fieldset>
               </div>
@@ -498,27 +500,47 @@
                 <fieldset class="fieldset">
                   <!-- select bank  -->
                   <label class="label text-[16px] font-bold text-black"
-                    >Select To Pay</label
+                    >Select Service Type</label
                   >
                   <select
-                    id="add-money-bank"
+                    id="service"
                     class="select w-full bg-base-200 rounded-full text-neutral/50"
                   >
-                    <option disabled selected>Select back</option>
-                    <option>Dutch-Bangla Bank Limited</option>
-                    <option>Islami Bank Bangladesh Limited</option>
-                    <option>City Bank</option>
-                    <option>AEastern Bank Limited</option>
-                    <option>Eastern Bank Limited</option>
+                    <option disabled selected>Select Service</option>
+                    <option>Electricity</option>
+                    <option>Gas</option>
+                    <option>Water</option>
+                    <option>Internet</option>
                   </select>
 
-                  <!-- Bank Account Number  -->
+                  <!-- bill provider -->
+                    <label class="label text-[16px] font-bold text-black"
+                    >Select Bill Provider</label
+                  >
+                  <select
+                    id="biller"
+                    class="select w-full bg-base-200 rounded-full text-neutral/50"
+                  >
+                    <option disabled selected>Select</option>
+        
+    <option>DESCO</option>
+    <option>DPDC</option>
+    <option>Titas Gas</option>
+    <option>Dhaka WASA</option>
+    <option>Link3</option>
+<option>Amber IT</option>
+<option>Dot Internet</option>
+<option>Carnival Internet</option>
+<option>Triangle Services</option>
+                  </select>
+
+                  <!-- Account Number  -->
 
                   <label class="label text-[16px] font-bold text-black"
-                    >Biller Account Number</label
+                    >Account Number</label
                   >
                   <input
-                    id="account-number"
+                    id="user-account-number"
                     type="text"
                     class="input bg-base-200 rounded-full"
                     placeholder="Enter account number"
@@ -526,12 +548,12 @@
                     minlength="12"
                   />
 
-                  <!-- Amount to Add -->
+                  <!-- Bill Amount -->
                   <label class="label text-[16px] font-bold text-black"
-                    >Amount to Pay</label
+                    >Bill Amount</label
                   >
                   <input
-                    id="add-money-amount"
+                    id="bill-amount"
                     type="number"
                     class="input bg-base-200 rounded-full"
                     placeholder="Enter Amount"
@@ -542,7 +564,7 @@
                     >Pin Number</label
                   >
                   <input
-                    id="pay-pin"
+                    id="bill-pin"
                     type="password"
                     class="input bg-base-200 rounded-full"
                     placeholder="Enter 4 Digit Pin"
@@ -550,10 +572,10 @@
                     minlength="4"
                   />
                   <button
-                    id="btn-addMoney"
+                    id="btn-billPay"
                     class="btn btn-primary mt-4 rounded-full text-[16px]"
                   >
-                    Pay Now
+                    Confirm
                   </button>
                 </fieldset>
               </div>
@@ -583,5 +605,7 @@
     <script src="./scripts/machine.js"></script>
     <script src="./scripts/AddMoney.js"></script>
     <script src="./scripts/cashOut.js"></script>
+    <script src="./scripts/sendMoney.js"></script>
+    <script src="./scripts/payBill.js"></script>
   </body>
 </html>
